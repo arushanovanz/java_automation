@@ -8,21 +8,11 @@ public class MyFirstProgram {
     hello("user");
     hello("bspb.qa");
 
-    double len = 5;
-    double a = 5;
-    double b = 4;
+    Square s = new Square(5);
+    Rectangle r = new Rectangle(3, 2);
 
-    System.out.println("Площадь квадрата со стороной " + len + " равна = " + area(len));
-    System.out.println("Площадь прямоугольника со сторонами " + a + " и " + b + " равна = " + area(a, b));
-  }
-
-
-  public static double area(double len) {
-    return len * len;
-  }
-
-  public static double area(double a, double b) {
-    return a * b;
+    System.out.println("Площадь квадрата со стороной " + s.l + " равна = " + s.area());
+    System.out.println("Площадь прямоугольника со сторонами " + r.a + " и " + r.b + " равна = " + r.area());
   }
 
   public static void hello(String somebody) {
