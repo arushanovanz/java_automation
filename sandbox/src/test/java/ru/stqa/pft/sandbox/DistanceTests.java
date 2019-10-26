@@ -3,6 +3,8 @@ package ru.stqa.pft.sandbox;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static ru.stqa.pft.sandbox.MyFirstProgram.CalcDistance;
+
 public class DistanceTests {
 
   @Test
@@ -13,6 +15,9 @@ public class DistanceTests {
     Point p4 = new Point(1,1);
     Assert.assertEquals(p2.CalcDistanceBetweenTwoPoints(p2,p1),5.0990195135927845);
     Assert.assertEquals(p2.CalcDistanceBetweenTwoPoints(p3,p4),1.4142135623730951);
+    Assert.assertEquals(CalcDistance(p2,p1),5.0990195135927845);
+    Assert.assertEquals(CalcDistance(p3,p4),1.4142135623730951);
+
 
   }
 }
