@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class NavigationHelper extends HelperBase {
-  WebDriver wd;
+  protected WebDriver wd;
 
   protected NavigationHelper(WebDriver wd) {
     super (wd);
