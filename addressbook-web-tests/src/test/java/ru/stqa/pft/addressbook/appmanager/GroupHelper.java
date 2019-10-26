@@ -21,6 +21,9 @@ public class GroupHelper extends HelperBase {
     changeFieldValue(By.name("group_footer"), groupData.getFooter());
 
   }
+  public void initGroupModification() {
+    click(By.name("edit"));
+  }
 
   public void initGroupCreation() {
     click(By.name("new"));
@@ -34,4 +37,7 @@ public class GroupHelper extends HelperBase {
     click(By.name("delete"));
   }
 
+  public void submitGroupModification() {
+    click(By.name("update"));
+  }
 }

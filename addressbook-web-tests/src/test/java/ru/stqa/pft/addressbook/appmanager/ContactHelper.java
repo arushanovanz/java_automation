@@ -43,4 +43,13 @@ public class ContactHelper extends HelperBase{
     wd.get("http://localhost/addressbook/edit.php");
   }
 
+
+  public void selectContact() {
+    click(By.name("selected[]"));
+  }
+  public void deleteSelectedContacts() {
+    click(new By.ByXPath("//input[@value='Delete']"));
+    wd.switchTo().alert().accept();
+  }
+
 }
