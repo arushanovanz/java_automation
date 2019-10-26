@@ -30,4 +30,9 @@ public class HelperBase {
     wd.findElement(locator).clear();
     wd.findElement(locator).sendKeys(text);
   }
+  protected void changeFieldValueWithoutClear(By locator, String text){
+    wd.findElement(locator).click();
+    wd.findElement(locator).sendKeys(text);
+
+  }
 }
