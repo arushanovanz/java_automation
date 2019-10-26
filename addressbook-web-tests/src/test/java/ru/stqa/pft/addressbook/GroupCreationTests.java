@@ -5,7 +5,6 @@ import java.util.concurrent.TimeUnit;
 import org.testng.annotations.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-//import org.openqa.selenium.support.ui.Select;
 
 public class GroupCreationTests {
   private WebDriver wd;
@@ -64,6 +63,7 @@ public class GroupCreationTests {
 
   }
 
+
   private void initGroupCreation() {
     wd.findElement(By.name("new")).click();
   }
@@ -94,5 +94,4 @@ public class GroupCreationTests {
       return false;
     }
   }
-
 }
