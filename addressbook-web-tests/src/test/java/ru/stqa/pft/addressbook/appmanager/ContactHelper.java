@@ -52,4 +52,11 @@ public class ContactHelper extends HelperBase{
     wd.switchTo().alert().accept();
   }
 
+  public void initContactModification() {
+   click(new By.ByXPath("//a/img[contains(@title[1],'Edit')]"));
+  }
+
+  public void submitContactModification() {
+    click(By.name("update"));
+  }
 }
