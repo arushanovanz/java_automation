@@ -17,7 +17,7 @@ public class ContactModificationTests extends TestBase {
             "email1", "homepage1",
             "27", "February", "1945",
             "28", "December", "1977",
-            "address22", "secondaryphone22", "notes22"));
+            "address22", "secondaryphone22", "notes22",null),false);
     app.getContactHelper().submitContactModification();
     app.getNavigationHelper().gotoHomePage();
 

@@ -17,7 +17,7 @@ public class ContactCreationTests extends TestBase {
             "email", "homepage",
             "17", "March", "1985",
             "18", "April", "1987",
-            "address2", "secondaryphone", "notes"));
+            "address2", "secondaryphone", "notes","name2"),true);
     app.getContactHelper().submitContactCreation();
     app.getSessionHelper().logout();
   }
