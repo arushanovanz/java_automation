@@ -11,7 +11,7 @@ public class HelperBase {
   }
 
   protected void click(By locator) {
-    wd.findElement((locator)).click();
+    wd.findElement(locator).click();
   }
 
   private boolean isAlertPresent() {

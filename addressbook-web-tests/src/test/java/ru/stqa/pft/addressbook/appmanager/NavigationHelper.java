@@ -10,10 +10,7 @@ public class NavigationHelper extends HelperBase {
     super (wd);
   }
 
-  public void returnToGroupPage() {
 
-    click(By.linkText("group page"));
-  }
 
   public void gotoGroupPage() {
 //    if (isElementPresent(By.tagName("h1"))

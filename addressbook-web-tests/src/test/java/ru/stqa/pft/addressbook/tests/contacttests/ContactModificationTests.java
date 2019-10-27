@@ -1,7 +1,8 @@
-package ru.stqa.pft.addressbook.tests;
+package ru.stqa.pft.addressbook.tests.contacttests;
 
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.tests.TestBase;
 
 public class ContactModificationTests extends TestBase {
 
@@ -20,8 +21,6 @@ public class ContactModificationTests extends TestBase {
             "address22", "secondaryphone22", "notes22",null),false);
     app.getContactHelper().submitContactModification();
     app.getNavigationHelper().gotoHomePage();
-
-
   }
 
 }
