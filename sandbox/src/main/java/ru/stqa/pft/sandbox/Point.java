@@ -15,8 +15,8 @@ public class Point {
     return y;
   }
 
-  public  double CalcDistanceBetweenTwoPoints(Point p2, Point p1) {
-    return Math.sqrt((Math.pow((p2.getX()-p1.getX()),2)) + Math.pow((p2.getY()-p1.getY()),2));
+  public  double CalcDistanceBetweenTwoPoints(Point p1) {
+    return Math.sqrt((Math.pow((this.getX()-p1.getX()),2)) + Math.pow((this.getY()-p1.getY()),2));
   }
 
 

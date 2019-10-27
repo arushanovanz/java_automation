@@ -17,7 +17,7 @@ public class MyFirstProgram {
     System.out.println("Площадь квадрата со стороной " + s.l + " равна = " + s.area());
     System.out.println("Площадь прямоугольника со сторонами " + r.a + " и " + r.b + " равна = " + r.area());
     System.out.println("Расстояние между двумя точками " + "["+p2.x+";"+p2.y+"]" + " и " + "["+p1.x+";"+p1.y+"]" + " равно = " + CalcDistance(p2,p1));
-    System.out.println("Расстояние между двумя точками " + "["+p2.x+";"+p2.y+"]" + " и " + "["+p1.x+";"+p1.y+"]" + " равно = " + p2.CalcDistanceBetweenTwoPoints(p2,p1));
+    System.out.println("Расстояние между двумя точками " + "["+p2.x+";"+p2.y+"]" + " и " + "["+p1.x+";"+p1.y+"]" + " равно = " + p2.CalcDistanceBetweenTwoPoints(p1));
   }
     public  static double CalcDistance(Point p1, Point p2){
         return Math.sqrt((Math.pow((p2.x-p1.x),2)) + Math.pow((p2.y-p1.y),2));
