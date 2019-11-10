@@ -2,9 +2,14 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.GroupData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContactHelper extends HelperBase {
 
@@ -52,8 +57,9 @@ public class ContactHelper extends HelperBase {
   }
 
 
-  public void selectContact() {
-    click(By.name("selected[]"));
+  public void selectContact(int index) {
+
+    wd.findElements(By.name("selected[]")).get(index).click();
   }
 
   public void deleteSelectedContacts() {
@@ -79,4 +85,18 @@ public class ContactHelper extends HelperBase {
     return isElementPresent(new By.ByXPath("//a/img[contains(@title[1],'Edit')]"));
   }
 
+  public List<ContactData> getContactList() {
+    List <ContactData> contacts = new ArrayList<ContactData>();
+    List<WebElement> elements = wd.findElements(By.name ("entry"));
+    for (WebElement element: elements){
+      List <WebElement> container = wd.findElements(By.tagName("td"));
+      String firstname = container.get(1).getText();
+      String lastname =  container.get(2).getText();
+      int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+      ContactData contact  = new ContactData(id,firstname,null,lastname,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
+      contacts.add(contact);
+    }
+    return contacts;
+  }
 }
+
