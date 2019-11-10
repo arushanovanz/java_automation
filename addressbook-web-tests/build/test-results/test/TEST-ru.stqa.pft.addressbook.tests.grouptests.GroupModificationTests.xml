@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.grouptests.GroupModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-10T10:10:56" hostname="LAPTOP-1DCL0BJ6" time="1.223">
+<testsuite name="ru.stqa.pft.addressbook.tests.grouptests.GroupModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-10T10:32:25" hostname="LAPTOP-1DCL0BJ6" time="11.855">
   <properties/>
-  <testcase name="testGroupModification" classname="ru.stqa.pft.addressbook.tests.grouptests.GroupModificationTests" time="1.223"/>
+  <testcase name="testGroupModification" classname="ru.stqa.pft.addressbook.tests.grouptests.GroupModificationTests" time="11.855"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 77.0.3865.40 (f484704e052e0b556f8030b65b953dce96503217-refs/branch-heads/3865@{#442}) on port 23808
+  <system-err><![CDATA[Starting ChromeDriver 77.0.3865.40 (f484704e052e0b556f8030b65b953dce96503217-refs/branch-heads/3865@{#442}) on port 9274
 Only local connections are allowed.
 Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-[1573380655.124][WARNING]: This version of ChromeDriver has not been tested with Chrome version 78.
-ноя 10, 2019 1:10:56 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+[1573381943.473][WARNING]: This version of ChromeDriver has not been tested with Chrome version 78.
+ноя 10, 2019 1:32:24 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 ]]></system-err>
 </testsuite>
