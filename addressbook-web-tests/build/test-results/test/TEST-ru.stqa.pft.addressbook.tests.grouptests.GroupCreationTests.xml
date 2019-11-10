@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.grouptests.GroupCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-10T09:58:50" hostname="LAPTOP-1DCL0BJ6" time="10.889">
+  <properties/>
+  <testcase name="testCreateNewGroup" classname="ru.stqa.pft.addressbook.tests.grouptests.GroupCreationTests" time="10.889"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 77.0.3865.40 (f484704e052e0b556f8030b65b953dce96503217-refs/branch-heads/3865@{#442}) on port 15647
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1573379928.731][WARNING]: This version of ChromeDriver has not been tested with Chrome version 78.
+ноя 10, 2019 12:58:49 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>
