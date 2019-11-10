@@ -13,8 +13,8 @@ public class ContactCreationTests extends TestBase {
   public void testCreateNewContact() throws Exception {
     app.getNavigationHelper().gotoHomePage();
     List<ContactData> before = app.getContactHelper().getContactList();
-    ContactData contact =  new ContactData("firstname", "middlename",
-            "lastname",
+    ContactData contact =  new ContactData("firstname3", "middlename",
+            "lastname4",
             "nickname", "title",
             "company", "address",
             "homephone", "mobilephone",
