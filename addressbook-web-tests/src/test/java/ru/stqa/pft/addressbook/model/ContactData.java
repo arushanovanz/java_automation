@@ -23,6 +23,10 @@ public class ContactData {
   private  String aday;
   private  String amonth;
 
+
+
+  private String allPhones;
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -167,6 +171,16 @@ public class ContactData {
   public int getId() {
     return id;
   }
+
+  public String getAllPhones() {
+    return allPhones;
+  }
+
+  public ContactData withAllPhones(String allPhones) {
+    this.allPhones = allPhones;
+    return this;
+  }
+
 
   @Override
   public String toString() {
