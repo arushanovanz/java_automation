@@ -7,10 +7,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
-
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+
 
 public class ContactHelper extends HelperBase {
 
@@ -31,8 +29,8 @@ public class ContactHelper extends HelperBase {
     changeFieldValue(By.name("title"), contactData.getTitle());
     changeFieldValue(By.name("company"), contactData.getCompany());
     changeFieldValue(By.name("address"), contactData.getAddress());
-    changeFieldValue(By.name("home"), contactData.getHomephone());
-    changeFieldValue(By.name("mobile"), contactData.getMobilephone());
+    changeFieldValue(By.name("home"), contactData.getHomePhone());
+    changeFieldValue(By.name("mobile"), contactData.getMobilePhone());
     changeFieldValue(By.name("fax"), contactData.getFax());
     changeFieldValue(By.name("email"), contactData.getEmail());
     changeFieldValue(By.name("homepage"), contactData.getHomepage());
@@ -70,16 +68,22 @@ public class ContactHelper extends HelperBase {
   public void delete(ContactData contact) {
     selectContactById(contact.getId());
     deleteSelectedContacts();
+    contactCashe = null;
   }
   public void initContactModification(int index) {
 
     wd.findElements(new By.ByXPath("//a/img[contains(@title[1],'Edit')]")).get(index).click();
+  }
+  public void initContactModificationById(int id) {
+//    wd.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']",id))).click();
+      wd.findElement(By.xpath(String.format("//tr[.//input[@value='%s']]/td[8]/a",id))).click();
   }
 
   public void modify(ContactData contact) {
     selectContactById(contact.getId());
     fillContactForm(contact, false);
     submitContactModification();
+    contactCashe = null;
   }
   public void submitContactModification() {
     click(By.name("update"));
@@ -89,23 +93,46 @@ public class ContactHelper extends HelperBase {
     initContactCreation();
     fillContactForm(contact, true);
     submitContactCreation();
+    contactCashe = null;
   }
 
   public boolean isThereAContact() {
     return isElementPresent(new By.ByXPath("//a/img[contains(@title[1],'Edit')]"));
   }
 
+  private Contacts contactCashe = null;
+
   public Contacts all() {
-    Contacts contacts = new Contacts();
+    if (contactCashe!=null){
+      return new Contacts(contactCashe);
+    }
+    contactCashe = new Contacts();
     List<WebElement> elements = wd.findElements(By.name("entry"));
     for (WebElement element : elements) {
       List<WebElement> container = element.findElements(By.tagName("td"));
       String firstname = container.get(2).getText();
       String lastname = container.get(1).getText();
+      String[] phones = container.get(5).getText().split("\n");
+
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-      contacts.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname));
+      contactCashe.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname)
+      .withHomephone(phones[0]).withMobilephone(phones[1]).withWorkphone(phones[2]));
     }
-    return contacts;
+    return contactCashe;
   }
+
+  public ContactData infoFromEditForm(ContactData contact) {
+    initContactModificationById(contact.getId());
+    String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
+    String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
+    String homephome = wd.findElement(By.name("home")).getAttribute("value");
+    String mobilephone = wd.findElement(By.name("mobile")).getAttribute("value");
+    String workphone = wd.findElement(By.name("work")).getAttribute("value");
+    wd.navigate().back();
+    return new ContactData().withId(contact.getId()).withFirstname(firstname).withLastname(lastname)
+            .withHomephone(homephome).withMobilephone(mobilephone).withWorkphone(workphone);
+  }
+
+
 }
 

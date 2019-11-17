@@ -8,7 +8,6 @@ import ru.stqa.pft.addressbook.tests.TestBase;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.testng.Assert.*;
 
 public class ContactCreationTests extends TestBase {
 
@@ -22,8 +21,9 @@ public class ContactCreationTests extends TestBase {
             .withBday("17").withBmonth("March").withByear("1985").withAday("18").withAmonth("April").withAyear("1987").withAddress2("address2")
             .withNotes("notes1").withSecondaryphone("secondaryphone1").withGroupname("name2");
     app.contact().create(contact);
+    app.goTo().homePage();
     Contacts after = app.contact().all();
-    assertEquals(after.size(), before.size() + 1);
+    assertThat(after.size(),  equalTo( before.size() + 1));
 
     assertThat(after, equalTo(
             before.withAdded(contact.withId(after.stream().mapToInt((c)->c.getId()).max().getAsInt()))));
