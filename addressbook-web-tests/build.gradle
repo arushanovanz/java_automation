@@ -14,5 +14,6 @@ dependencies {
     implementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.0.0-alpha-3'
     implementation 'org.seleniumhq.selenium:selenium-ie-driver:4.0.0-alpha-3'
     implementation 'org.seleniumhq.selenium:selenium-support:4.0.0-alpha-3'
+    implementation 'org.hamcrest:hamcrest:2.2'
 
 }
