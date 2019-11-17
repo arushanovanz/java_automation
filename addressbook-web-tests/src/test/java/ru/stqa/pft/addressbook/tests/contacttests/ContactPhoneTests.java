@@ -20,7 +20,7 @@ public class ContactPhoneTests extends TestBase {
               .withNickname("nickname").withTitle( "title").withCompany("company").withAddress("address").withHomephone("homephone")
               .withMobilephone("mobilephone").withWorkphone("workphone").withFax("fax").withEmail("email").withHomepage("homepage")
               .withBday("17").withBmonth("March").withByear("1985").withAday("18").withAmonth("April").withAyear("1987").withAddress2("address2")
-              .withNotes("notes").withSecondaryphone("secondaryphone").withGroupname("test1"));
+              .withNotes("notes").withSecondaryPhone("secondaryphone").withGroupname("test1"));
     }
   }
 
@@ -34,7 +34,7 @@ public class ContactPhoneTests extends TestBase {
   }
 
   private String  mergePhones(ContactData contact) {
-    return Arrays.asList(contact.getHomePhone(),contact.getMobilePhone(),contact.getWorkPhone())
+    return Arrays.asList(contact.getHomePhone(),contact.getMobilePhone(),contact.getWorkPhone(),contact.getSecondaryphone())
             .stream().filter((s) -> !s.equals(""))
             .map(ContactPhoneTests::cleaned)
             .collect(Collectors.joining("\n"));

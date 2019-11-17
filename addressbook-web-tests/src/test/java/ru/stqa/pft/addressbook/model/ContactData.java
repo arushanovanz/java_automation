@@ -14,8 +14,15 @@ public class ContactData {
   private  String homephone;
   private  String mobilephone;
   private  String workphone;
+  private  String secondaryphone;
   private  String fax;
   private  String email;
+  private  String ayear;
+  private  String address2;
+  private  String notes;
+  private String groupname;
+  private  String email2;
+  private  String email3;
   private  String homepage;
   private  String bday;
   private  String bmonth;
@@ -23,9 +30,46 @@ public class ContactData {
   private  String aday;
   private  String amonth;
 
+  public ContactData withSecondaryPhone(String secondaryphone) {
+    this.secondaryphone = secondaryphone;
+    return this;
+  }
+
+
+  public String getEmail2() {
+    return email2;
+  }
+
+  public ContactData withEmail2(String email2) {
+    this.email2 = email2;
+    return this;
+  }
+
+  public String getEmail3() {
+    return email3;
+  }
+
+  public ContactData withEmail3(String email3) {
+    this.email3 = email3;
+    return this;
+  }
+
+
+
 
 
   private String allPhones;
+
+  public String getAllEmails() {
+    return allEmails;
+  }
+
+  public ContactData withAllEmails(String allEmails) {
+    this.allEmails = allEmails;
+    return this;
+  }
+
+  private String allEmails;
 
   @Override
   public boolean equals(Object o) {
@@ -41,11 +85,6 @@ public class ContactData {
     return Objects.hash(firstname, lastname);
   }
 
-  private  String ayear;
-  private  String address2;
-  private  String secondaryphone;
-  private  String notes;
-  private String groupname;
 
   public ContactData withId(int id) {
     this.id = id;
@@ -149,11 +188,6 @@ public class ContactData {
 
   public ContactData withAddress2(String address2) {
     this.address2 = address2;
-    return this;
-  }
-
-  public ContactData withSecondaryphone(String secondaryphone) {
-    this.secondaryphone = secondaryphone;
     return this;
   }
 
