@@ -11,9 +11,9 @@ import java.util.List;
 public class ContactCreationTests extends TestBase {
   @Test
   public void testCreateNewContact() throws Exception {
-    app.getNavigationHelper().gotoHomePage();
-    List<ContactData> before = app.getContactHelper().getContactList();
-    ContactData contact =  new ContactData("firstname3", "middlename",
+    app.goTo().homePage();
+    List<ContactData> before = app.contact().list();
+    ContactData contact = new ContactData("firstname3", "middlename",
             "lastname4",
             "nickname", "title",
             "company", "address",
@@ -22,18 +22,18 @@ public class ContactCreationTests extends TestBase {
             "email", "homepage",
             "17", "March", "1985",
             "18", "April", "1987",
-            "address2", "secondaryphone", "notes","1");
-    app.getContactHelper().createContact(contact);
-    List<ContactData> after = app.getContactHelper().getContactList();
-    Assert.assertEquals(after.size(), before.size()+1);
+            "address2", "secondaryphone", "notes", "1");
+    app.contact().create(contact);
+    List<ContactData> after = app.contact().list();
+    Assert.assertEquals(after.size(), before.size() + 1);
 
     before.add(contact);
-    Comparator<? super ContactData> byId= (g1, g2) -> Integer.compare(g1.getId(), g2.getId());
+    Comparator<? super ContactData> byId = (g1, g2) -> Integer.compare(g1.getId(), g2.getId());
     before.sort(byId);
     after.sort(byId);
-    Assert.assertEquals(before ,after);
+    Assert.assertEquals(before, after);
 
-    app.getSessionHelper().logout();
+//    app.getSessionHelper().logout();
   }
 
 }

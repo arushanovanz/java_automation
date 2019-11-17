@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
-import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +57,7 @@ public class ContactHelper extends HelperBase {
 
 
   public void selectContact(int index) {
-    
+
     wd.findElements(By.name("selected[]")).get(index).click();
   }
 
@@ -66,20 +65,26 @@ public class ContactHelper extends HelperBase {
     click(new By.ByXPath("//input[@value='Delete']"));
     wd.switchTo().alert().accept();
   }
-
+  public void delete(int index) {
+    selectContact(index);
+    deleteSelectedContacts();
+  }
   public void initContactModification(int index) {
 
     wd.findElements(new By.ByXPath("//a/img[contains(@title[1],'Edit')]")).get(index).click();
 //    click(new By.ByXPath("//a/img[contains(@title[1],'Edit')]"));
   }
-
+  public void modify(ContactData contact) {
+    fillContactForm(contact, false);
+    submitContactModification();
+  }
   public void submitContactModification() {
     click(By.name("update"));
   }
 
-  public void createContact(ContactData contact) {
+  public void create(ContactData contact) {
     initContactCreation();
-    fillContactForm(contact,true);
+    fillContactForm(contact, true);
     submitContactCreation();
   }
 
@@ -87,19 +92,19 @@ public class ContactHelper extends HelperBase {
     return isElementPresent(new By.ByXPath("//a/img[contains(@title[1],'Edit')]"));
   }
 
-  public List<ContactData> getContactList() {
-    List <ContactData> contacts = new ArrayList<ContactData>();
-    List<WebElement> elements = wd.findElements(By.name ("entry"));
-    for (WebElement element: elements){
-      List <WebElement> container = element.findElements(By.tagName("td"));
+  public List<ContactData> list() {
+    List<ContactData> contacts = new ArrayList<ContactData>();
+    List<WebElement> elements = wd.findElements(By.name("entry"));
+    for (WebElement element : elements) {
+      List<WebElement> container = element.findElements(By.tagName("td"));
       String firstname = container.get(2).getText();
-      String lastname =  container.get(1).getText();
+      String lastname = container.get(1).getText();
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-      ContactData contact  = new ContactData(id,firstname,
-              null,lastname,null,null,
-              null,null,null,null,
-              null,null,null,null,null,
-              null,null,null,null,null,null,null,null,null);
+      ContactData contact = new ContactData(id, firstname,
+              null, lastname, null, null,
+              null, null, null, null,
+              null, null, null, null, null,
+              null, null, null, null, null, null, null, null, null);
       contacts.add(contact);
     }
     return contacts;

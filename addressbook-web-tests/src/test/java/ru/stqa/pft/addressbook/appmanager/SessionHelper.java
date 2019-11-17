@@ -10,10 +10,11 @@ public class SessionHelper extends HelperBase {
   }
 
   public void login(String username, String password) {
-    changeFieldValue(By.name("user"),username);
-    changeFieldValue(By.name("pass"),password);
+    changeFieldValue(By.name("user"), username);
+    changeFieldValue(By.name("pass"), password);
     click(By.xpath("//input[@value='Login']"));
   }
+
   public void logout() {
     wd.findElement(By.linkText("Logout")).click();
   }

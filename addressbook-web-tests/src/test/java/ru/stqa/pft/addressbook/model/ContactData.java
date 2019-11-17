@@ -82,6 +82,7 @@ public class ContactData {
 
     this.groupname = groupname;
   }
+
   public ContactData(String firstname,
                      String middlename, String lastname, String nickname,
                      String title, String company, String address,
