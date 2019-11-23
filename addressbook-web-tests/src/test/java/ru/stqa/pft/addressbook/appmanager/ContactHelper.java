@@ -43,6 +43,7 @@ public class ContactHelper extends HelperBase {
     changeFieldValue(By.name("address2"), contactData.getAddress2());
     changeFieldValue(By.name("phone2"), contactData.getSecondaryphone());
     changeFieldValue(By.name("notes"), contactData.getNotes());
+    attach(By.name("photo"),contactData.getPhoto());
 
     if (creation) {
       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroupname());

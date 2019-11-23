@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook.model;
 
+import java.io.File;
 import java.util.Objects;
 
 public class ContactData {
@@ -29,6 +30,17 @@ public class ContactData {
   private  String byear;
   private  String aday;
   private  String amonth;
+
+  public File getPhoto() {
+    return photo;
+  }
+
+  public ContactData withPhoto(File photo) {
+    this.photo = photo;
+    return this;
+  }
+
+  private File photo;
 
   public ContactData withSecondaryPhone(String secondaryphone) {
     this.secondaryphone = secondaryphone;
@@ -70,20 +82,6 @@ public class ContactData {
   }
 
   private String allEmails;
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    ContactData that = (ContactData) o;
-    return Objects.equals(firstname, that.firstname) &&
-            Objects.equals(lastname, that.lastname);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(firstname, lastname);
-  }
 
 
   public ContactData withId(int id) {
@@ -290,6 +288,33 @@ public class ContactData {
   }
 
   ;
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactData that = (ContactData) o;
+    return id == that.id &&
+            Objects.equals(firstname, that.firstname) &&
+            Objects.equals(lastname, that.lastname) &&
+            Objects.equals(address, that.address) &&
+            Objects.equals(homephone, that.homephone) &&
+            Objects.equals(mobilephone, that.mobilephone) &&
+            Objects.equals(workphone, that.workphone) &&
+            Objects.equals(secondaryphone, that.secondaryphone) &&
+            Objects.equals(email, that.email) &&
+            Objects.equals(address2, that.address2) &&
+            Objects.equals(groupname, that.groupname) &&
+            Objects.equals(email2, that.email2) &&
+            Objects.equals(email3, that.email3) &&
+            Objects.equals(allPhones, that.allPhones) &&
+            Objects.equals(allEmails, that.allEmails);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, firstname, lastname, address, homephone, mobilephone, workphone, secondaryphone, email, address2, groupname, email2, email3, allPhones, allEmails);
+  }
 
   public String getBmonth() {
     return bmonth;
