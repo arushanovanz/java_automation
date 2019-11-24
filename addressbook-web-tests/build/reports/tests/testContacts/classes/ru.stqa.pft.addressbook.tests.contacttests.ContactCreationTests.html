@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">13.959s</div>
+<div class="counter">12.765s</div>
 <p>duration</p>
 </div>
 </td>
@@ -66,6 +66,9 @@
 <li>
 <a href="#tab1">Tests</a>
 </li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
 </ul>
 <div id="tab0" class="tab">
 <h2>Failed tests</h2>
@@ -73,12 +76,27 @@
 <a name="testCreateNewContact[0](ContactData{id=2147483647, firstname='Firstname 0', lastname='Lastname 0'})"></a>
 <h3 class="failures">testCreateNewContact[0](ContactData{id=2147483647, firstname='Firstname 0', lastname='Lastname 0'})</h3>
 <span class="code">
-<pre>java.lang.AssertionError: 
-Expected: &lt;[ContactData{id=104, firstname='Firstname 0', lastname='Lastname 0'}, ContactData{id=115, firstname='Firstname 1', lastname='Lastname 1'}, ContactData{id=116, firstname='Firstname 0', lastname='Lastname 0'}, ContactData{id=118, firstname='Firstname 0', lastname='Lastname 0'}, ContactData{id=101, firstname='Firstname 2', lastname='Lastname 2'}]&gt;
-     but: was &lt;[ContactData{id=104, firstname='Firstname 0', lastname='Lastname 0'}, ContactData{id=118, firstname='Firstname 0', lastname='Lastname 0'}, ContactData{id=115, firstname='Firstname 1', lastname='Lastname 1'}, ContactData{id=116, firstname='Firstname 0', lastname='Lastname 0'}, ContactData{id=101, firstname='Firstname 2', lastname='Lastname 2'}]&gt;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at ru.stqa.pft.addressbook.tests.contacttests.ContactCreationTests.testCreateNewContact(ContactCreationTests.java:57)
+<pre>org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=78.0.3904.97)
+Build info: version: '4.0.0-alpha-3', revision: '8c567de6dc'
+System info: host: 'LAPTOP-1DCL0BJ6', ip: '192.168.31.138', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.97, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56539}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: cfd33edbffe504ce9cf4b2fccc1bb310
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:191)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:125)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:308)
+	at org.openqa.selenium.remote.RemoteWebElement.getAttribute(RemoteWebElement.java:138)
+	at ru.stqa.pft.addressbook.appmanager.ContactHelper.all(ContactHelper.java:124)
+	at ru.stqa.pft.addressbook.tests.contacttests.ContactCreationTests.testCreateNewContact(ContactCreationTests.java:46)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -139,12 +157,31 @@ Expected: &lt;[ContactData{id=104, firstname='Firstname 0', lastname='Lastname 0
 <a name="testCreateNewContact[1](ContactData{id=2147483647, firstname='Firstname 1', lastname='Lastname 1'})"></a>
 <h3 class="failures">testCreateNewContact[1](ContactData{id=2147483647, firstname='Firstname 1', lastname='Lastname 1'})</h3>
 <span class="code">
-<pre>java.lang.AssertionError: 
-Expected: &lt;[ContactData{id=104, firstname='Firstname 0', lastname='Lastname 0'}, ContactData{id=118, firstname='Firstname 0', lastname='Lastname 0'}, ContactData{id=115, firstname='Firstname 1', lastname='Lastname 1'}, ContactData{id=116, firstname='Firstname 0', lastname='Lastname 0'}, ContactData{id=101, firstname='Firstname 2', lastname='Lastname 2'}, ContactData{id=119, firstname='Firstname 1', lastname='Lastname 1'}]&gt;
-     but: was &lt;[ContactData{id=104, firstname='Firstname 0', lastname='Lastname 0'}, ContactData{id=118, firstname='Firstname 0', lastname='Lastname 0'}, ContactData{id=115, firstname='Firstname 1', lastname='Lastname 1'}, ContactData{id=116, firstname='Firstname 0', lastname='Lastname 0'}, ContactData{id=101, firstname='Firstname 2', lastname='Lastname 2'}, ContactData{id=119, firstname='Firstname 1', lastname='Lastname 1'}]&gt;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at ru.stqa.pft.addressbook.tests.contacttests.ContactCreationTests.testCreateNewContact(ContactCreationTests.java:57)
+<pre>org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=78.0.3904.97)
+Build info: version: '4.0.0-alpha-3', revision: '8c567de6dc'
+System info: host: 'LAPTOP-1DCL0BJ6', ip: '192.168.31.138', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.97, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56539}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: cfd33edbffe504ce9cf4b2fccc1bb310
+*** Element info: {Using=id, value=maintable}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:191)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:125)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:375)
+	at org.openqa.selenium.By$ById.findElement(By.java:196)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)
+	at ru.stqa.pft.addressbook.appmanager.HelperBase.isElementPresent(HelperBase.java:60)
+	at ru.stqa.pft.addressbook.appmanager.NavigationHelper.homePage(NavigationHelper.java:24)
+	at ru.stqa.pft.addressbook.tests.contacttests.ContactCreationTests.testCreateNewContact(ContactCreationTests.java:43)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -214,15 +251,23 @@ Expected: &lt;[ContactData{id=104, firstname='Firstname 0', lastname='Lastname 0
 </thead>
 <tr>
 <td class="failures">testCreateNewContact[0](ContactData{id=2147483647, firstname='Firstname 0', lastname='Lastname 0'})</td>
-<td class="failures">7.277s</td>
+<td class="failures">6.738s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">testCreateNewContact[1](ContactData{id=2147483647, firstname='Firstname 1', lastname='Lastname 1'})</td>
-<td class="failures">6.682s</td>
+<td class="failures">6.027s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>[1574622456.727][WARNING]: Timed out connecting to Chrome, retrying...
+[1574622462.780][WARNING]: Timed out connecting to Chrome, retrying...
+</pre>
+</span>
 </div>
 </div>
 <div id="footer">
@@ -232,7 +277,7 @@ Expected: &lt;[ContactData{id=104, firstname='Firstname 0', lastname='Lastname 0
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 5.6.2</a> at 24.11.2019 21:35:22</p>
+<a href="http://www.gradle.org">Gradle 5.6.2</a> at 24.11.2019 22:07:59</p>
 </div>
 </div>
 </body>

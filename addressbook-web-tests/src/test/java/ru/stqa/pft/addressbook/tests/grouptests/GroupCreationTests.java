@@ -38,7 +38,6 @@ public class GroupCreationTests extends TestBase {
     }
   }
 
-
   @DataProvider
   public Iterator<Object[]> validGroupsFromJson() throws IOException {
     try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/groups.json")))){
@@ -59,6 +58,7 @@ public class GroupCreationTests extends TestBase {
 
   @Test(dataProvider = "validGroupsFromJson")
   public void testCreateNewGroup(GroupData group) throws Exception {
+
     app.goTo().groupPage();
     Groups before = app.group().all();
     app.group().create(group);
