@@ -1,35 +1,64 @@
 package ru.stqa.pft.addressbook.model;
 
+import com.google.gson.annotations.Expose;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
 import java.io.File;
 import java.util.Objects;
 
+@XStreamAlias("contact")
 public class ContactData {
-  private int id=  Integer.MAX_VALUE;
-  private  String firstname;
-  private  String middlename;
-  private  String lastname;
-  private  String nickname;
-  private  String title;
-  private  String company;
-  private  String address;
-  private  String homephone;
-  private  String mobilephone;
-  private  String workphone;
-  private  String secondaryphone;
-  private  String fax;
-  private  String email;
-  private  String ayear;
-  private  String address2;
-  private  String notes;
+  private int id = Integer.MAX_VALUE;
+  @Expose
+  private String firstname;
+  @Expose
+  private String middlename;
+  @Expose
+  private String lastname;
+  private String nickname;
+  private String title;
+  @Expose
+  private String company;
+  @Expose
+  private String address;
+  @Expose
+  private String homephone;
+  @Expose
+  private String mobilephone;
+  @Expose
+  private String workphone;
+  @Expose
+  private String secondaryphone;
+  @Expose
+  private String fax;
+  @Expose
+  private String email;
+  @Expose
+  private String ayear;
+  @Expose
+  private String address2;
+  @Expose
+  private String notes;
+  @Expose
   private String groupname;
-  private  String email2;
-  private  String email3;
-  private  String homepage;
-  private  String bday;
-  private  String bmonth;
-  private  String byear;
-  private  String aday;
-  private  String amonth;
+  @Expose
+  private String email2;
+  @Expose
+  private String email3;
+  @Expose
+  private String homepage;
+  @Expose
+  private String bday;
+  @Expose
+  private String bmonth;
+  @Expose
+  private String byear;
+  @Expose
+  private String aday;
+  @Expose
+  private String amonth;
+
+  private File photo;
 
   public File getPhoto() {
     return photo;
@@ -40,7 +69,6 @@ public class ContactData {
     return this;
   }
 
-  private File photo;
 
   public ContactData withSecondaryPhone(String secondaryphone) {
     this.secondaryphone = secondaryphone;
@@ -65,9 +93,6 @@ public class ContactData {
     this.email3 = email3;
     return this;
   }
-
-
-
 
 
   private String allPhones;

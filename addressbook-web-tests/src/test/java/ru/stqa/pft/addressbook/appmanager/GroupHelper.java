@@ -41,7 +41,7 @@ public class GroupHelper extends HelperBase {
 
 
   public void selectGroupById(int id) {
-     wd.findElement(By.cssSelector("input[value= '"+id+"']")).click();
+    wd.findElement(By.cssSelector("input[value= '" + id + "']")).click();
   }
 
 
@@ -57,7 +57,7 @@ public class GroupHelper extends HelperBase {
     initGroupCreation();
     fillGroupForm(group);
     submitGroupCreation();
-    groupCashe =null;
+    groupCashe = null;
     returnToGroupPage();
   }
 
@@ -66,7 +66,7 @@ public class GroupHelper extends HelperBase {
     initGroupModification();
     fillGroupForm(group);
     submitGroupModification();
-    groupCashe =null;
+    groupCashe = null;
   }
 
   public boolean isThereAGroup() {
@@ -80,7 +80,7 @@ public class GroupHelper extends HelperBase {
   private Groups groupCashe = null;
 
   public Groups all() {
-    if (groupCashe !=null){
+    if (groupCashe != null) {
       return new Groups(groupCashe);
     }
     groupCashe = new Groups();
@@ -96,7 +96,7 @@ public class GroupHelper extends HelperBase {
   public void delete(GroupData group) {
     selectGroupById(group.getId());
     deleteSelectedGroups();
-    groupCashe =null;
+    groupCashe = null;
     returnToGroupPage();
   }
 

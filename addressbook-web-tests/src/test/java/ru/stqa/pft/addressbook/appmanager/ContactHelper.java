@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+
 import java.util.List;
 
 
@@ -43,7 +44,7 @@ public class ContactHelper extends HelperBase {
     changeFieldValue(By.name("address2"), contactData.getAddress2());
     changeFieldValue(By.name("phone2"), contactData.getSecondaryphone());
     changeFieldValue(By.name("notes"), contactData.getNotes());
-    attach(By.name("photo"),contactData.getPhoto());
+    attach(By.name("photo"), contactData.getPhoto());
 
     if (creation) {
       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroupname());
@@ -58,7 +59,7 @@ public class ContactHelper extends HelperBase {
 
   public void selectContactById(int id) {
 
-    wd.findElement(By.cssSelector("input[value= '"+id+"']")).click();
+    wd.findElement(By.cssSelector("input[value= '" + id + "']")).click();
   }
 
   public void deleteSelectedContacts() {
@@ -71,13 +72,15 @@ public class ContactHelper extends HelperBase {
     deleteSelectedContacts();
     contactCashe = null;
   }
+
   public void initContactModification(int index) {
 
     wd.findElements(new By.ByXPath("//a/img[contains(@title[1],'Edit')]")).get(index).click();
   }
+
   public void initContactModificationById(int id) {
 //    wd.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']",id))).click();
-      wd.findElement(By.xpath(String.format("//tr[.//input[@value='%s']]/td[8]/a",id))).click();
+    wd.findElement(By.xpath(String.format("//tr[.//input[@value='%s']]/td[8]/a", id))).click();
   }
 
   public void modify(ContactData contact) {
@@ -86,6 +89,7 @@ public class ContactHelper extends HelperBase {
     submitContactModification();
     contactCashe = null;
   }
+
   public void submitContactModification() {
     click(By.name("update"));
   }
@@ -104,7 +108,7 @@ public class ContactHelper extends HelperBase {
   private Contacts contactCashe = null;
 
   public Contacts all() {
-    if (contactCashe!=null){
+    if (contactCashe != null) {
       return new Contacts(contactCashe);
     }
     contactCashe = new Contacts();
@@ -119,7 +123,7 @@ public class ContactHelper extends HelperBase {
 
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
       contactCashe.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname)
-                                        .withAllPhones(allPhones).withAllEmails(allEmailes).withAddress(address));
+              .withAllPhones(allPhones).withAllEmails(allEmailes).withAddress(address));
     }
     return contactCashe;
   }

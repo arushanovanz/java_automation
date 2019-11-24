@@ -7,14 +7,13 @@ import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 import ru.stqa.pft.addressbook.tests.TestBase;
 
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 
 public class ContactModificationTests extends TestBase {
   @BeforeMethod
-  public void ensurePrecontions(){
+  public void ensurePrecontions() {
     app.goTo().homePage();
     if (app.contact().all().size() == 0) {
       app.contact().create(new ContactData().withFirstname("modifyfirstname").withMiddlename("modifymiddlename").withLastname("lastname")
@@ -43,7 +42,8 @@ public class ContactModificationTests extends TestBase {
 
     before.remove(modifiedContact);
     before.add(contact);
-    assertThat(after,equalTo(before.without(modifiedContact).withAdded(contact)));;
+    assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
+    ;
     app.goTo().homePage();
 
   }
