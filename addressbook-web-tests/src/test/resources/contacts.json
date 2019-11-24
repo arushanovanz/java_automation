@@ -44,28 +44,5 @@
     "byear": "1985",
     "aday": "18",
     "amonth": "April"
-  },
-  {
-    "firstname": "Firstname 2",
-    "middlename": "Middlename 2",
-    "lastname": "Lastname 2",
-    "company": "Company 2",
-    "address": "address 2",
-    "homephone": "Homephone 2",
-    "mobilephone": "Mobilephone 2",
-    "workphone": "Workphone 2",
-    "secondaryphone": "",
-    "fax": "fax 2",
-    "email": "email 2",
-    "ayear": "1987",
-    "address2": "address 2 ",
-    "notes": "notes1",
-    "groupname": "name2",
-    "homepage": "homepage 2",
-    "bday": "17",
-    "bmonth": "March",
-    "byear": "1985",
-    "aday": "18",
-    "amonth": "April"
   }
 ]

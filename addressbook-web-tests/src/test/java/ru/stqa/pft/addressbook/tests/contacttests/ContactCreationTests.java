@@ -23,24 +23,32 @@ public class ContactCreationTests extends TestBase {
 
   @DataProvider
   public Iterator<Object[]> validContactsFromJson() throws IOException {
-    BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.json")));
-    String json = "";
-    String line = reader.readLine();
-    while (line != null) {
-      json += line;
-      line = reader.readLine();
+    try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.json")))) {
+      String json = "";
+      String line = reader.readLine();
+      while (line != null) {
+        json += line;
+        line = reader.readLine();
+      }
+      Gson gson = new Gson();
+      List<ContactData> contacts = gson.fromJson(json, new TypeToken<List<ContactData>>() {
+      }.getType());
+      return contacts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
     }
-    Gson gson = new Gson();
-    List<ContactData> contacts = gson.fromJson(json, new TypeToken<List<ContactData>>() {
-    }.getType());
-    return contacts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
   }
 
 
   @Test(dataProvider = "validContactsFromJson")
   public void testCreateNewContact(ContactData contact) throws Exception {
     app.goTo().homePage();
+//    File photo = new File("src/test/resources/example.png");
+
     Contacts before = app.contact().all();
+//    ContactData contact = new ContactData().withFirstname("firstname1").withMiddlename("middlename1").withLastname("lastname1")
+//            .withNickname("nickname1").withTitle( "title1").withCompany("company1").withAddress("address1").withHomephone("+7(1111)")
+//            .withMobilephone("333-3333").withWorkphone("33 333").withFax("fax").withEmail("email").withHomepage("homepage1")
+//            .withBday("17").withBmonth("March").withByear("1985").withAday("18").withAmonth("April").withAyear("1987").withAddress2("address2")
+//            .withNotes("notes1").withSecondaryPhone("").withGroupname("name2").withPhoto(photo);
     app.contact().create(contact);
     app.goTo().homePage();
     Contacts after = app.contact().all();
