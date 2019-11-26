@@ -321,24 +321,12 @@ public class ContactData {
     ContactData that = (ContactData) o;
     return id == that.id &&
             Objects.equals(firstname, that.firstname) &&
-            Objects.equals(lastname, that.lastname) &&
-            Objects.equals(address, that.address) &&
-            Objects.equals(homephone, that.homephone) &&
-            Objects.equals(mobilephone, that.mobilephone) &&
-            Objects.equals(workphone, that.workphone) &&
-            Objects.equals(secondaryphone, that.secondaryphone) &&
-            Objects.equals(email, that.email) &&
-            Objects.equals(address2, that.address2) &&
-            Objects.equals(groupname, that.groupname) &&
-            Objects.equals(email2, that.email2) &&
-            Objects.equals(email3, that.email3) &&
-            Objects.equals(allPhones, that.allPhones) &&
-            Objects.equals(allEmails, that.allEmails);
+            Objects.equals(lastname, that.lastname);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstname, lastname, address, homephone, mobilephone, workphone, secondaryphone, email, address2, groupname, email2, email3, allPhones, allEmails);
+    return Objects.hash(id, firstname, lastname);
   }
 
   public String getBmonth() {

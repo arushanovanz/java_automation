@@ -34,9 +34,10 @@ public class ContactModificationTests extends TestBase {
             .withNickname("nickname").withTitle("title").withCompany("company").withAddress("address").withHomephone("homephone")
             .withMobilephone("mobilephone").withWorkphone("workphone").withFax("fax").withEmail("email").withHomepage("homepage")
             .withBday("17").withBmonth("March").withByear("1985").withAday("18").withAmonth("April").withAyear("1987").withAddress2("address2")
-            .withNotes("notes").withSecondaryPhone("secondaryphone").withGroupname("test2");
+            .withNotes("notes").withSecondaryPhone("secondaryphone").withGroupname("test 2");
     app.contact().modify(contact);
     app.goTo().homePage();
+
     Contacts after = app.contact().all();
     Assert.assertEquals(after.size(), before.size());
 

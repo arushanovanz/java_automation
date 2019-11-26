@@ -37,17 +37,17 @@ public class ContactDataGenerator {
   }
 
   private void run() throws IOException {
-    List<ContactData> groups = generateContacts(count);
+    List<ContactData> contacts = generateContacts(count);
     if (format.equals("json")) {
-      saveAsJson(groups, new File(file));
+      saveAsJson(contacts, new File(file));
     } else {
       System.out.println("Unrecognized format" + format);
     }
   }
 
-  private void saveAsJson(List<ContactData> groups, File file) throws IOException {
+  private void saveAsJson(List<ContactData> contacts, File file) throws IOException {
     Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
-    String json = gson.toJson(groups);
+    String json = gson.toJson(contacts);
     try (Writer writer = new FileWriter(file)){
       writer.write(json);
     }
