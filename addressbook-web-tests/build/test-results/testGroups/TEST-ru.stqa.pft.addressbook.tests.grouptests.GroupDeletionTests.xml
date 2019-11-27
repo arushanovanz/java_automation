@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.grouptests.GroupDeletionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-24T20:15:02" hostname="LAPTOP-1DCL0BJ6" time="2.874">
-  <properties/>
-  <testcase name="testDeleteSelectedGroup" classname="ru.stqa.pft.addressbook.tests.grouptests.GroupDeletionTests" time="2.874"/>
-  <system-out><![CDATA[23:15:02.349 [Test worker] INFO  r.s.p.a.t.g.GroupCreationTests - Start test testDeleteSelectedGroup
-23:15:05.337 [Test worker] INFO  r.s.p.a.t.g.GroupCreationTests - Stop test testDeleteSelectedGroup
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

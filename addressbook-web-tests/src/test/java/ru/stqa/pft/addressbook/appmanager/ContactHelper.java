@@ -60,7 +60,7 @@ public class ContactHelper extends HelperBase {
 
   public void selectContactById(int id) {
 
-    wd.findElement(By.cssSelector("input[value= '" + id + "']")).click();
+    wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
   }
 
   public void deleteSelectedContacts() {
@@ -74,18 +74,11 @@ public class ContactHelper extends HelperBase {
     contactCashe = null;
   }
 
-  public void initContactModification(int index) {
-
-    wd.findElements(new By.ByXPath("//a/img[contains(@title[1],'Edit')]")).get(index).click();
-  }
-
   public void initContactModificationById(int id) {
-//    wd.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']",id))).click();
     wd.findElement(By.xpath(String.format("//tr[.//input[@value='%s']]/td[8]/a", id))).click();
   }
 
   public void modify(ContactData contact) {
-    selectContactById(contact.getId());
     fillContactForm(contact, false);
     submitContactModification();
     contactCashe = null;
@@ -147,7 +140,6 @@ public class ContactHelper extends HelperBase {
             .withHomephone(homephome).withMobilephone(mobilephone).withWorkphone(workphone)
             .withEmail(email).withEmail2(email2).withEmail3(email3).withAddress(address).withSecondaryPhone(secondaryphone);
   }
-
 
 }
 

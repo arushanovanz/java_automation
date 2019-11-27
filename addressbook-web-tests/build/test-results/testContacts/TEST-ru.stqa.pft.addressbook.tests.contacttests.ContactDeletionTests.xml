@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.contacttests.ContactDeletionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-26T09:43:42" hostname="LAPTOP-1DCL0BJ6" time="3.93">
-  <properties/>
-  <testcase name="testDeleteSelectedContact" classname="ru.stqa.pft.addressbook.tests.contacttests.ContactDeletionTests" time="3.93"/>
-  <system-out><![CDATA[12:43:42.069 [Test worker] INFO  r.s.p.a.t.g.GroupCreationTests - Start test testDeleteSelectedContact
-12:43:46.847 [Test worker] INFO  r.s.p.a.t.g.GroupCreationTests - Stop test testDeleteSelectedContact
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
