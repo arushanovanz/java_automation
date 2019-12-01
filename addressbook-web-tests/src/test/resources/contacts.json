@@ -20,7 +20,8 @@
     "bmonth": "March",
     "byear": "1985",
     "aday": "18",
-    "amonth": "April"
+    "amonth": "April",
+    "photo": "src/test/resources/example.png"
 
   },
   {
@@ -44,6 +45,7 @@
     "bmonth": "March",
     "byear": "1985",
     "aday": "18",
-    "amonth": "April"
+    "amonth": "April",
+    "photo": "src/test/resources/example.png"
   }
 ]

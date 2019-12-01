@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.grouptests.GroupCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-01T12:16:48" hostname="LAPTOP-1DCL0BJ6" time="2.086">
+  <properties/>
+  <testcase name="testCreateBadGroup" classname="ru.stqa.pft.addressbook.tests.grouptests.GroupCreationTests" time="2.086"/>
+  <system-out><![CDATA[15:16:48.839 [Test worker] INFO  r.s.p.a.t.g.GroupCreationTests - Start test testCreateBadGroup
+Hibernate: select groupdata0_.group_id as group_id1_1_, groupdata0_.group_footer as group_fo2_1_, groupdata0_.group_header as group_he3_1_, groupdata0_.group_name as group_na4_1_ from group_list groupdata0_
+Hibernate: select groupdata0_.group_id as group_id1_1_, groupdata0_.group_footer as group_fo2_1_, groupdata0_.group_header as group_he3_1_, groupdata0_.group_name as group_na4_1_ from group_list groupdata0_
+15:16:50.926 [Test worker] INFO  r.s.p.a.t.g.GroupCreationTests - Stop test testCreateBadGroup
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

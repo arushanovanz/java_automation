@@ -1,9 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.contacttests.ContactDeletionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-27T07:21:38" hostname="LAPTOP-1DCL0BJ6" time="4.109">
+<testsuite name="ru.stqa.pft.addressbook.tests.contacttests.ContactDeletionTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2019-12-01T12:58:35" hostname="LAPTOP-1DCL0BJ6" time="0.699">
   <properties/>
-  <testcase name="testDeleteSelectedContact" classname="ru.stqa.pft.addressbook.tests.contacttests.ContactDeletionTests" time="4.109"/>
-  <system-out><![CDATA[10:21:37.869 [Test worker] INFO  r.s.p.a.t.g.GroupCreationTests - Start test testDeleteSelectedContact
-10:21:42.962 [Test worker] INFO  r.s.p.a.t.g.GroupCreationTests - Stop test testDeleteSelectedContact
+  <testcase name="testDeleteSelectedContact" classname="ru.stqa.pft.addressbook.tests.contacttests.ContactDeletionTests" time="0.699">
+    <failure message="java.lang.AssertionError: &#13;&#10;Expected: &lt;1&gt;&#13;&#10;     but: was &lt;2&gt;" type="java.lang.AssertionError">java.lang.AssertionError: 
+Expected: &lt;1&gt;
+     but: was &lt;2&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at ru.stqa.pft.addressbook.tests.contacttests.ContactDeletionTests.testDeleteSelectedContact(ContactDeletionTests.java:33)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+	at org.testng.TestNG.runSuites(TestNG.java:1032)
+	at org.testng.TestNG.run(TestNG.java:1000)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:141)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:90)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:132)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:412)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.lang.Thread.run(Thread.java:748)
+</failure>
+  </testcase>
+  <system-out><![CDATA[15:58:35.188 [Test worker] INFO  r.s.p.a.t.g.GroupCreationTests - Start test testDeleteSelectedContact
+Hibernate: select contactdat0_.id as id1_0_, contactdat0_.address as address2_0_, contactdat0_.ayear as ayear3_0_, contactdat0_.firstname as firstnam4_0_, contactdat0_.home as home5_0_, contactdat0_.lastname as lastname6_0_, contactdat0_.middlename as middlena7_0_, contactdat0_.mobile as mobile8_0_, contactdat0_.nickname as nickname9_0_, contactdat0_.photo as photo10_0_, contactdat0_.work as work11_0_ from addressbook contactdat0_ where deprecated='0000-00-00'
+Hibernate: select contactdat0_.id as id1_0_, contactdat0_.address as address2_0_, contactdat0_.ayear as ayear3_0_, contactdat0_.firstname as firstnam4_0_, contactdat0_.home as home5_0_, contactdat0_.lastname as lastname6_0_, contactdat0_.middlename as middlena7_0_, contactdat0_.mobile as mobile8_0_, contactdat0_.nickname as nickname9_0_, contactdat0_.photo as photo10_0_, contactdat0_.work as work11_0_ from addressbook contactdat0_ where deprecated='0000-00-00'
+15:58:36.365 [Test worker] INFO  r.s.p.a.t.g.GroupCreationTests - Stop test testDeleteSelectedContact
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -2,70 +2,112 @@ package ru.stqa.pft.addressbook.model;
 
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import java.io.File;
 import java.util.Objects;
 
 @XStreamAlias("contact")
+@Entity
+@Table (name="addressbook")
 public class ContactData {
+  @Id
+  @Column (name= "id")
   private int id = Integer.MAX_VALUE;
+
   @Expose
+  @Column (name= "firstname")
   private String firstname;
   @Expose
+  @Column (name= "middlename")
   private String middlename;
   @Expose
+  @Column (name= "lastname")
   private String lastname;
+  @Column (name= "nickname")
   private String nickname;
+  @Transient
   private String title;
   @Expose
+  @Transient
   private String company;
   @Expose
+  @Column (name= "address")
+  @Type(type="text")
   private String address;
   @Expose
+  @Column (name= "home")
+  @Type(type="text")
   private String homephone;
   @Expose
+  @Column (name= "mobile")
+  @Type(type="text")
   private String mobilephone;
   @Expose
+  @Column (name= "work")
+  @Type(type="text")
   private String workphone;
   @Expose
+  @Transient
   private String secondaryphone;
   @Expose
+  @Transient
   private String fax;
   @Expose
+  @Transient
   private String email;
   @Expose
   private String ayear;
   @Expose
+  @Transient
   private String address2;
   @Expose
+  @Transient
   private String notes;
   @Expose
+  @Transient
   private String groupname;
   @Expose
+  @Transient
   private String email2;
   @Expose
+  @Transient
   private String email3;
   @Expose
+  @Transient
   private String homepage;
   @Expose
+  @Transient
   private String bday;
   @Expose
+  @Transient
   private String bmonth;
   @Expose
+  @Transient
   private String byear;
   @Expose
+  @Transient
   private String aday;
   @Expose
+  @Transient
   private String amonth;
 
-  private File photo;
+  @Column(name ="photo")
+  @Type(type="text")
+  private String photo;
+
+  @Transient
+  private String allPhones;
+  @Transient
+  private String allEmails;
 
   public File getPhoto() {
-    return photo;
+    return new File (photo);
   }
 
   public ContactData withPhoto(File photo) {
-    this.photo = photo;
+    this.photo = photo.getPath();
     return this;
   }
 
@@ -95,7 +137,6 @@ public class ContactData {
   }
 
 
-  private String allPhones;
 
   public String getAllEmails() {
     return allEmails;
@@ -106,7 +147,7 @@ public class ContactData {
     return this;
   }
 
-  private String allEmails;
+
 
 
   public ContactData withId(int id) {
@@ -137,6 +178,23 @@ public class ContactData {
   public ContactData withTitle(String title) {
     this.title = title;
     return this;
+  }
+
+  @Override
+  public String toString() {
+    return "ContactData{" +
+            "id=" + id +
+            ", firstname='" + firstname + '\'' +
+            ", middlename='" + middlename + '\'' +
+            ", lastname='" + lastname + '\'' +
+            ", homephone='" + homephone + '\'' +
+            ", mobilephone='" + mobilephone + '\'' +
+            ", workphone='" + workphone + '\'' +
+            ", email='" + email + '\'' +
+            ", email2='" + email2 + '\'' +
+            ", email3='" + email3 + '\'' +
+            ", photo='" + photo + '\'' +
+            '}';
   }
 
   public ContactData withCompany(String company) {
@@ -238,15 +296,6 @@ public class ContactData {
     return this;
   }
 
-
-  @Override
-  public String toString() {
-    return "ContactData{" +
-            "id=" + id +
-            ", firstname='" + firstname + '\'' +
-            ", lastname='" + lastname + '\'' +
-            '}';
-  }
 
   public String getFirstname() {
     return firstname;
