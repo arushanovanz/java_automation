@@ -17,9 +17,13 @@ dependencies {
     implementation 'com.thoughtworks.xstream:xstream:1.4.11.1'
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'ch.qos.logback:logback-classic:1.2.3'
+    implementation 'mysql:mysql-connector-java:5.1.48'
+    implementation 'org.hibernate:hibernate-core:5.4.9.Final'
 
 }
-
+test {
+    useTestNG()
+}
 task testGroups(type: Test) {
     useTestNG() {
         suites 'src/test/resources/testng-groups.xml'
@@ -52,5 +56,8 @@ task testContactsInfo(type: Test) {
     }
     if (project.hasProperty('target')) {
         systemProperty 'target', "${target}"
+
     }
+
+
 }
