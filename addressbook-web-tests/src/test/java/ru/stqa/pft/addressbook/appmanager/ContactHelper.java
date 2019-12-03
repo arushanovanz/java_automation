@@ -150,8 +150,15 @@ public class ContactHelper extends HelperBase {
 
   public void addContactToGroup(int contactId, int groupId){
     selectContactById(contactId);
-    new Select(wd.findElement(By.name("to_group"))).selectByIndex(groupId);
+    new Select(wd.findElement(By.name("to_group"))).selectByValue(""+groupId);
     wd.findElement(By.xpath("//form//input[@name='add']")).click();
+  }
+
+  public void deleteContactFromGroup(int contactId, int groupId){
+    wd.findElement(By.name("group")).click();
+    new Select(wd.findElement(By.name("group"))).selectByValue(""+groupId);
+    selectContactById(contactId);
+    wd.findElement(By.name("remove")).click();
 
   }
 }
