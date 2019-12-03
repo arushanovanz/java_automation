@@ -18,11 +18,12 @@ public class ContactModificationTests extends TestBase {
   public void ensurePrecontions() {
     app.goTo().homePage();
     if (app.db().contacts().size()== 0) {
+      File photo = new File("src/test/resources/example.png");
       app.contact().create(new ContactData().withFirstname("modifyfirstname").withMiddlename("modifymiddlename").withLastname("lastname")
               .withNickname("nickname").withTitle("title").withCompany("company").withAddress("address").withHomephone("homephone")
               .withMobilephone("mobilephone").withWorkphone("workphone").withFax("fax").withEmail("email").withHomepage("homepage")
               .withBday("17").withBmonth("March").withByear("1985").withAday("18").withAmonth("April").withAyear("1987").withAddress2("address2")
-              .withNotes("notes").withSecondaryPhone("secondaryphone").withGroupname("test1"));
+              .withNotes("notes").withSecondaryPhone("secondaryphone").withPhoto(photo));
     }
   }
 
@@ -36,7 +37,7 @@ public class ContactModificationTests extends TestBase {
             .withNickname("nickname").withTitle("title").withCompany("company").withAddress("address").withHomephone("homephone")
             .withMobilephone("mobilephone").withWorkphone("workphone").withFax("fax").withEmail("email").withHomepage("homepage")
             .withBday("17").withBmonth("March").withByear("1985").withAday("18").withAmonth("April").withAyear("1987").withAddress2("address2")
-            .withNotes("notes").withSecondaryPhone("secondaryphone").withGroupname("test 2").withPhoto(photo);
+            .withNotes("notes").withSecondaryPhone("secondaryphone").withPhoto(photo);
     app.contact().modify(contact);
     app.goTo().homePage();
 
@@ -46,8 +47,8 @@ public class ContactModificationTests extends TestBase {
     before.remove(modifiedContact);
     before.add(contact);
     assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
-    ;
     app.goTo().homePage();
+    verifyContactListInUI();
 
   }
 
