@@ -11,4 +11,6 @@ test {
 }
 dependencies {
     implementation 'org.testng:testng:7.0.0'
+    implementation 'com.codeborne:selenide:5.5.1'
+
 }

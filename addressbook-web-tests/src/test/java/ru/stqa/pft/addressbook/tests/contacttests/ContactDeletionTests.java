@@ -16,7 +16,7 @@ public class ContactDeletionTests extends TestBase {
   public void ensurePreconditions() {
     File photo = new File("src/test/resources/example.png");
     app.goTo().homePage();
-    if (app.db().contacts().size()== 0) {
+    if (app.db().contacts().size() == 0) {
       app.contact().create(new ContactData().withFirstname("deletefirstname").withMiddlename("deletemiddlename").withLastname("lastname")
               .withNickname("nickname").withTitle("title").withCompany("company").withAddress("address").withHomephone("homephone")
               .withMobilephone("mobilephone").withWorkphone("workphone").withFax("fax").withEmail("email").withHomepage("homepage")

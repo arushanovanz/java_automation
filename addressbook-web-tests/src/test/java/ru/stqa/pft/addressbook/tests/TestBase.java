@@ -54,6 +54,7 @@ public class TestBase {
               .collect(Collectors.toSet())));
     }
   }
+
   public void verifyContactListInUI() {
     if (Boolean.getBoolean("verifyUI")) {
       Contacts dbContacts = app.db().contacts();

@@ -43,9 +43,10 @@ public class ContactCreationTests extends TestBase {
   @Test(dataProvider = "validContactsFromJson")
   public void testCreateNewContact(ContactData contact) throws Exception {
     Groups groups = app.db().groups();
-    if (groups.size() ==0){
-      app.group().create(new GroupData().withName("test2'").withFooter("footer1")  );
+    if (groups.size() == 0) {
+      app.group().create(new GroupData().withName("test2'").withFooter("footer1"));
     }
+
     app.goTo().homePage();
     Contacts before = app.db().contacts();
     app.contact().create(contact);

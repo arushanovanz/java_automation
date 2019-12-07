@@ -17,7 +17,7 @@ public class ContactModificationTests extends TestBase {
   @BeforeMethod
   public void ensurePrecontions() {
     app.goTo().homePage();
-    if (app.db().contacts().size()== 0) {
+    if (app.db().contacts().size() == 0) {
       File photo = new File("src/test/resources/example.png");
       app.contact().create(new ContactData().withFirstname("modifyfirstname").withMiddlename("modifymiddlename").withLastname("lastname")
               .withNickname("nickname").withTitle("title").withCompany("company").withAddress("address").withHomephone("homephone")

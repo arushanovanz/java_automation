@@ -12,22 +12,22 @@ import java.util.Set;
 
 @XStreamAlias("contact")
 @Entity
-@Table (name="addressbook")
+@Table(name = "addressbook")
 public class ContactData {
   @Id
-  @Column (name= "id")
+  @Column(name = "id")
   private int id = Integer.MAX_VALUE;
 
   @Expose
-  @Column (name= "firstname")
+  @Column(name = "firstname")
   private String firstname;
   @Expose
-  @Column (name= "middlename")
+  @Column(name = "middlename")
   private String middlename;
   @Expose
-  @Column (name= "lastname")
+  @Column(name = "lastname")
   private String lastname;
-  @Column (name= "nickname")
+  @Column(name = "nickname")
   private String nickname;
   @Transient
   private String title;
@@ -37,23 +37,23 @@ public class ContactData {
 
   @Expose
   @Transient
-  @Column (name= "address")
-  @Type(type="text")
+  @Column(name = "address")
+  @Type(type = "text")
   private String address;
 
   @Expose
-  @Column (name= "home")
-  @Type(type="text")
+  @Column(name = "home")
+  @Type(type = "text")
   private String homephone;
 
   @Expose
-  @Column (name= "mobile")
-  @Type(type="text")
+  @Column(name = "mobile")
+  @Type(type = "text")
   private String mobilephone;
   @Expose
 
-  @Column (name= "work")
-  @Type(type="text")
+  @Column(name = "work")
+  @Type(type = "text")
   private String workphone;
 
   @Expose
@@ -65,8 +65,8 @@ public class ContactData {
   private String fax;
 
   @Expose
-  @Type(type="text")
-  @Column (name= "email")
+  @Type(type = "text")
+  @Column(name = "email")
   private String email;
 
   @Expose
@@ -83,19 +83,19 @@ public class ContactData {
 
   @Expose
   @ManyToMany(fetch = FetchType.EAGER)
-  @JoinTable(name= "address_in_groups",
-          joinColumns = @JoinColumn(name="id"), inverseJoinColumns =@JoinColumn (name= "group_id"))
+  @JoinTable(name = "address_in_groups",
+          joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
   private Set<GroupData> groups = new HashSet<GroupData>();
 
   @Expose
   @Transient
-  @Column (name= "email2")
-  @Type(type="text")
+  @Column(name = "email2")
+  @Type(type = "text")
   private String email2;
   @Expose
   @Transient
-  @Column (name= "email2")
-  @Type(type="text")
+  @Column(name = "email2")
+  @Type(type = "text")
   private String email3;
 
   @Expose
@@ -117,8 +117,8 @@ public class ContactData {
   @Transient
   private String amonth;
 
-  @Column(name ="photo")
-  @Type(type="text")
+  @Column(name = "photo")
+  @Type(type = "text")
   private String photo;
 
   @Transient
@@ -127,7 +127,7 @@ public class ContactData {
   private String allEmails;
 
   public File getPhoto() {
-    return new File (photo);
+    return new File(photo);
   }
 
   public ContactData withPhoto(File photo) {
@@ -161,7 +161,6 @@ public class ContactData {
   }
 
 
-
   public String getAllEmails() {
     return allEmails;
   }
@@ -170,8 +169,6 @@ public class ContactData {
     this.allEmails = allEmails;
     return this;
   }
-
-
 
 
   public ContactData withId(int id) {
@@ -435,13 +432,13 @@ public class ContactData {
   @Override
   public int hashCode() {
     return Objects.hash(id, firstname, middlename, lastname,
-                             nickname, title, company, address,
-                              homephone, mobilephone, workphone, email, email2, email3);
+            nickname, title, company, address,
+            homephone, mobilephone, workphone, email, email2, email3);
   }
 
   public ContactData inGroup(GroupData group) {
-     groups.add(group);
-     return this;
+    groups.add(group);
+    return this;
   }
 }
 

@@ -22,7 +22,7 @@ public class ApplicationManager {
   private SessionHelper sessionHelper;
   private ContactHelper contactHelper;
   private String browser;
-  private DbHelper dbHelper ;
+  private DbHelper dbHelper;
 
 
   public ApplicationManager(String browser) {
@@ -67,7 +67,6 @@ public class ApplicationManager {
   }
 
 
-
   public GroupHelper group() {
     return groupHelper;
   }
@@ -84,7 +83,8 @@ public class ApplicationManager {
     return contactHelper;
   }
 
-  public  DbHelper db(){
-   return dbHelper;
+  public DbHelper db() {
+    return dbHelper;
   }
+
 }
