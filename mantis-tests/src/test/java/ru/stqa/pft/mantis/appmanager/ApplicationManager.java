@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.remote.HttpSessionId;
 
 import java.io.File;
 import java.io.FileReader;
@@ -40,5 +41,13 @@ public class ApplicationManager {
     wd.quit();
   }
 
+  public HttpSession newSession(){
+    return new HttpSession(this);
+  }
 
+  public String getProperty(String key) {
+    return properties.getProperty(key);
+  }
 }
+
+
