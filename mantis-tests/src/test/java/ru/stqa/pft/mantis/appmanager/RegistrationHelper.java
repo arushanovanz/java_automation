@@ -20,6 +20,10 @@ public class RegistrationHelper extends HelperBase {
     changeFieldValue(By.name("password"),password);
     changeFieldValue(By.name("password_confirm"),password);
     click(By.cssSelector("input[value='Update User']"));
-
   }
+
+  public void goToManagePage(){
+    click(By.cssSelector("'span[class=bracket-link] a'"));
+  }
+
 }
