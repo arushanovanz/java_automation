@@ -23,7 +23,8 @@ public class RegistrationHelper extends HelperBase {
   }
 
   public void goToManagePage(){
-    click(By.cssSelector("'span[class=bracket-link] a'"));
+   wd.findElement(By.xpath("//a[text() = 'Manage Users']")).click();
+//    click(By.name("Manage Users"));
   }
 
 }
