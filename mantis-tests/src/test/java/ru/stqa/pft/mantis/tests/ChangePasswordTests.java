@@ -23,17 +23,20 @@ public class ChangePasswordTests extends  TestBase {
       app.user().loginAsAdmin();
       Users users = app.db().getAllUsers();
 //    выбирает заданного пользователя из db
+     UserData user = app.user().selectUserFromDbWithoutAdmin(users);
+//    меняет пароль в james для user на дефолтный и чистим почтовый ящик
+      app.james().setUserPasswordToDefault(user.getUsername());
+      app.james().drainEmail(user.getUsername(), jamesPassword);
+//    Получаем это письмо, извлекаем из него ссылку для смены пароля, проходим по этой ссылке и меняем пароль.
 //    Администратор нажимает кнопку Reset Password
 //    Отправляется письмо на адрес пользователя
-      UserData user = app.user().selectUserFromDbWithoutAdmin(users);
-      app.user().startChangePassword(user.getUsername());
-//    меняет пароль в james для user на дефолтный
-      app.james().setUserPasswordToDefault(user.getUsername());
-//    Получаем это письмо, извлекаем из него ссылку для смены пароля, проходим по этой ссылке и меняем пароль.
+     app.user().startChangePassword(user.getUsername());
      List<MailMessage> mailMessages = app.james().waitForMail(user.getUsername(), jamesPassword, 60000);
      String confirmationLink =findConfirmationLink(mailMessages,user.getEmail()) ;
-      app.registration().finish(confirmationLink, newPassword);
-//    Проверить, что пользователь может войти в систему с новым паролем
+     app.registration().finish(confirmationLink, newPassword);
+
+    app.user().logOut();
+//  Проверяем, что пользователь может войти в систему с новым паролем
     assertTrue(app.newSession().login(user.getUsername(),newPassword));
 
   }

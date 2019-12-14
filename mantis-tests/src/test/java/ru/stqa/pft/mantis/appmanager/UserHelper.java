@@ -34,4 +34,8 @@ public class UserHelper extends HelperBase {
     }
     return null;
   }
+
+  public void logOut() {
+    click(By.linkText("Logout"));
+  }
 }
