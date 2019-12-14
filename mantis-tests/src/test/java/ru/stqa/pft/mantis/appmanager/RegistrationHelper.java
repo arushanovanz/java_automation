@@ -22,9 +22,5 @@ public class RegistrationHelper extends HelperBase {
     click(By.cssSelector("input[value='Update User']"));
   }
 
-  public void goToManagePage(){
-   wd.findElement(By.xpath("//a[text() = 'Manage Users']")).click();
-//    click(By.name("Manage Users"));
-  }
 
 }

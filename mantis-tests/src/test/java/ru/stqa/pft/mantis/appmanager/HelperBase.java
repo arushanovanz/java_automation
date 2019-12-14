@@ -1,7 +1,6 @@
 package ru.stqa.pft.mantis.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
@@ -11,6 +10,7 @@ public class HelperBase {
   protected ApplicationManager app;
   protected WebDriver wd;
 
+
   public HelperBase(ApplicationManager app) {
     this.app = app;
     this.wd = app.getDriver();
@@ -18,15 +18,6 @@ public class HelperBase {
 
   protected void click(By locator) {
     wd.findElement(locator).click();
-  }
-
-  private boolean isAlertPresent() {
-    try {
-      wd.switchTo().alert();
-      return true;
-    } catch (NoAlertPresentException e) {
-      return false;
-    }
   }
 
   protected void changeFieldValue(By locator, String text) {
@@ -45,7 +36,14 @@ public class HelperBase {
       wd.findElement(locator).sendKeys(file.getAbsolutePath());
     }
   }
-
+  protected boolean isElementPresent(By locator) {
+    try {
+      wd.findElement(locator);
+      return true;
+    } catch (NoSuchElementException ex) {
+      return false;
+    }
+  }
   protected void changeFieldValueWithoutClear(By locator, String text) {
     click(locator);
     if (text != null) {
@@ -53,15 +51,6 @@ public class HelperBase {
       if (!text.equals(existingText)) {
         wd.findElement(locator).sendKeys(text);
       }
-    }
-  }
-
-  protected boolean isElementPresent(By locator) {
-    try {
-      wd.findElement(locator);
-      return true;
-    } catch (NoSuchElementException ex) {
-      return false;
     }
   }
 }
