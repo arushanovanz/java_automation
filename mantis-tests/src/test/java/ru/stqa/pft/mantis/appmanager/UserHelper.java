@@ -13,7 +13,7 @@ public class UserHelper extends HelperBase {
   public void loginAsAdmin() {
     wd.get(app.getProperty("web.baseUrl") + "/login_page.php");
     changeFieldValue(By.name("username"), app.getProperty("web.adminLogin"));
-    changeFieldValue(By.name("password"), app.getProperty("web.adminPass"));
+    changeFieldValue(By.name("password"), app.getProperty("web.adminPassword"));
     click(By.cssSelector("input[value='Login']"));
   }
 
@@ -26,7 +26,7 @@ public class UserHelper extends HelperBase {
     click(By.cssSelector("input[value='Reset Password']"));
   }
 
-  public UserData selectUserFromDbNotAdmin(Users users) {
+  public UserData selectUserFromDbWithoutAdmin(Users users) {
     for (UserData user : users) {
       if (!user.getUsername().equals("administrator"))
       { return user;
@@ -34,5 +34,4 @@ public class UserHelper extends HelperBase {
     }
     return null;
   }
-
 }

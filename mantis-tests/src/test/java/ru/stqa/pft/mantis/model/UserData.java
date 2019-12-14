@@ -16,15 +16,15 @@ import javax.persistence.Table;
     @Type(type = "int")
     private int id = Integer.MAX_VALUE;
 
-    @Column(name = "username")
+    @Column(name = "username",columnDefinition = "VARCHAR")
     @Type(type = "text")
     private String username;
 
-    @Column(name = "email")
+    @Column(name = "email",columnDefinition = "VARCHAR")
     @Type(type = "text")
     private String email;
 
-    @Column(name = "password")
+    @Column(name = "password",columnDefinition = "VARCHAR")
     @Type(type = "text")
     private String password;
 

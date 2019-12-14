@@ -156,7 +156,13 @@ public class JamesHelper {
     String result = readUntil("User" +name + " deleted");
     closeTelnetSession();
  }
+public void setUserPasswordToDefault(String name){
+  initTelnetSession();
+  write("setpassword " + name + " "+ "password");
+  String result = readUntil("Password for " +name + " reset");
+  closeTelnetSession();
 
+}
   public boolean doesUserExist(String name){
     initTelnetSession();
     write("verify "+name);

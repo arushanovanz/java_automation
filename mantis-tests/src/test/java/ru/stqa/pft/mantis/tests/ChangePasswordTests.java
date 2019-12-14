@@ -19,16 +19,18 @@ public class ChangePasswordTests extends  TestBase {
   public void testChangePassword() throws IOException, MessagingException {
 //    Администратор входит в систему, переходит на страницу управления пользователями,
       String newPassword = "1qaz@wsx";
-      String mailPassword = "password";
+      String jamesPassword = "password";
       app.user().loginAsAdmin();
-      Users users = app.db().getAllusers();
+      Users users = app.db().getAllUsers();
 //    выбирает заданного пользователя из db
 //    Администратор нажимает кнопку Reset Password
 //    Отправляется письмо на адрес пользователя
-      UserData user = app.user().selectUserFromDbNotAdmin(users);
+      UserData user = app.user().selectUserFromDbWithoutAdmin(users);
       app.user().startChangePassword(user.getUsername());
+//    меняет пароль в james для user на дефолтный
+      app.james().setUserPasswordToDefault(user.getUsername());
 //    Получаем это письмо, извлекаем из него ссылку для смены пароля, проходим по этой ссылке и меняем пароль.
-     List<MailMessage> mailMessages = app.james().waitForMail(user.getUsername(), mailPassword, 100000);
+     List<MailMessage> mailMessages = app.james().waitForMail(user.getUsername(), jamesPassword, 60000);
      String confirmationLink =findConfirmationLink(mailMessages,user.getEmail()) ;
       app.registration().finish(confirmationLink, newPassword);
 //    Проверить, что пользователь может войти в систему с новым паролем

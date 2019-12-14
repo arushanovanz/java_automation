@@ -24,7 +24,7 @@ public class DbHelper {
     sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
   }
 
-  public Users getAllusers() {
+  public Users getAllUsers() {
     Session session = sessionFactory.openSession();
     session.beginTransaction();
     List<UserData> users = session.createQuery( "from UserData" ).list();
