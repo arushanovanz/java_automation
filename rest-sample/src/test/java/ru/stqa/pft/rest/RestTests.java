@@ -18,7 +18,7 @@ import java.util.Set;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class RestTests {
-  @Test
+  @Test(enabled = false)
   public void testCreateIssue() throws IOException {
     Set<Issue> oldIssues = getIssues();
     Issue newIssue = new Issue().withSubject("Test issue ").withDescription("New Test Issue");
