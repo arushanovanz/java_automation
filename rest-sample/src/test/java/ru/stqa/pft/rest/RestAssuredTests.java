@@ -9,16 +9,25 @@ import org.apache.http.client.fluent.Executor;
 import org.apache.http.client.fluent.Request;
 import org.apache.http.message.BasicNameValuePair;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.rmi.RemoteException;
 import java.util.Set;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class RestAssuredTests {
+public class RestAssuredTests extends TestBase {
+  @BeforeMethod
+  public void skipSoapTestsIfIssueIsNotResolved () throws IOException {
+    Set<Issue> issues = getIssues();
+    for (Issue issue : issues) {
+      skipIfNotFixed(issue.getId());
+    }
+  }
   @BeforeClass
-
   public void init(){
     RestAssured.authentication = RestAssured.basic("288f44776e7bec4bf44fdfeb1e646490", "");
   }
@@ -34,7 +43,8 @@ public class RestAssuredTests {
 
 
   private Set<Issue> getIssues() throws IOException {
-    String json = RestAssured.get( "https://bugify.stqa.ru/api/issues.json").asString();
+    String json = RestAssured.given().parameter("limit","200")
+                             .get( "https://bugify.stqa.ru/api/issues.json").asString();
     JsonElement parsed = JsonParser.parseString(json);
     JsonElement issues = parsed.getAsJsonObject().get("issues");
     return new Gson().fromJson(issues, new TypeToken<Set<Issue>>(){}.getType());
@@ -43,8 +53,8 @@ public class RestAssuredTests {
 
   private int createIssue(Issue newIssue) throws IOException {
     String json = RestAssured.given().parameter("subject",newIssue.getSubject())
-                         .parameter("description", newIssue.getDescription())
-                         .post("https://bugify.stqa.ru/api/issues.json").asString();
+                          .parameter("description", newIssue.getDescription())
+                          .post("https://bugify.stqa.ru/api/issues.json").asString();
     JsonElement parsed = JsonParser.parseString(json);
     return parsed.getAsJsonObject().get("issue_id").getAsInt();
   }
