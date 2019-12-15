@@ -3,9 +3,9 @@ package ru.stqa.pft.rest;
 import java.util.Objects;
 
 public class Issue {
-   private int id;
-   private String subject;
-   private String description;
+  private int id;
+  private String subject;
+  private String description;
 
   public int getId() {
     return id;

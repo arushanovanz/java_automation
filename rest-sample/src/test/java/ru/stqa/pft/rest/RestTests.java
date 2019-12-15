@@ -11,9 +11,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-
 import java.util.Set;
-
 
 import static org.testng.AssertJUnit.assertEquals;
 
@@ -25,7 +23,8 @@ public class RestTests {
     int issueId = createIssue(newIssue);
     Set<Issue> newIssues = getIssues();
     oldIssues.add(newIssue.withId(issueId));
-    assertEquals(newIssues,oldIssues);
+    assertEquals(newIssues, oldIssues);
+
   }
 
 
@@ -34,19 +33,20 @@ public class RestTests {
             .execute(Request.Get("http://demo.bugify.com/api/issues.json")).returnContent().asString();
     JsonElement parsed = JsonParser.parseString(json);
     JsonElement issues = parsed.getAsJsonObject().get("issues");
-    return new Gson().fromJson(issues, new TypeToken<Set<Issue>>(){}.getType());
+    return new Gson().fromJson(issues, new TypeToken<Set<Issue>>() {
+    }.getType());
 
   }
 
   private Executor getExecutor() {
-    return Executor.newInstance().auth( "814ab0b5d9ac02af6e51ffefb20a4d38","");
+    return Executor.newInstance().auth("814ab0b5d9ac02af6e51ffefb20a4d38", "");
   }
 
   private int createIssue(Issue newIssue) throws IOException {
-    String json =  getExecutor()
+    String json = getExecutor()
             .execute(Request.Post("http://demo.bugify.com/api/issues.json")
-            .bodyForm(new BasicNameValuePair("subject",newIssue.getSubject()),
-                      new BasicNameValuePair("description", newIssue.getDescription())))
+                    .bodyForm(new BasicNameValuePair("subject", newIssue.getSubject()),
+                            new BasicNameValuePair("description", newIssue.getDescription())))
             .returnContent().asString();
     JsonElement parsed = JsonParser.parseString(json);
     return parsed.getAsJsonObject().get("issue_id").getAsInt();
