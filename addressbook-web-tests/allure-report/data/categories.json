@@ -1,0 +1,77 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: \nExpected: <[ContactData{id=169, firstname='modifyfirstname', middlename='modifymiddlename', lastname='lastname', homephone='homephone', mobilephone='mobilephone', workphone='', email='email', email2='null', email3='null'}, ContactData{id=168, firstname='Firstname 0', middlename='Middlename 0', lastname='Lastname 0', homephone='Homephone 0', mobilephone='Mobilephone 0', workphone='', email='email 0', email2='null', email3='null'}, ContactData{id=170, firstname='Firstname 0', middlename='Middlename 0', lastname='Lastname 0', homephone='Homephone 0', mobilephone='Mobilephone 0', workphone='Workphone 0', email='email 0', email2='null', email3='null'}]>\n     but: was <[ContactData{id=170, firstname='Firstname 0', middlename='Middlename 0', lastname='Lastname 0', homephone='Homephone 0', mobilephone='Mobilephone 0', workphone='', email='email 0', email2='null', email3='null'}, ContactData{id=169, firstname='modifyfirstname', middlename='modifymiddlename', lastname='lastname', homephone='homephone', mobilephone='mobilephone', workphone='', email='email', email2='null', email3='null'}, ContactData{id=168, firstname='Firstname 0', middlename='Middlename 0', lastname='Lastname 0', homephone='Homephone 0', mobilephone='Mobilephone 0', workphone='', email='email 0', email2='null', email3='null'}]>",
+      "children" : [ {
+        "name" : "testCreateNewContact[ContactData{id=2147483647, firstname='Firstname 0', middlename='Middlename 0', lastname='Lastname 0', homephone='Homephone 0', mobilephone='Mobilephone 0', workphone='Workphone 0', email='email 0', email2='null', email3='null'}]",
+        "uid" : "a323055b6910cad8",
+        "parentUid" : "523c85c97fc878b4806b91e3f8eca090",
+        "status" : "failed",
+        "time" : {
+          "start" : 1576433954747,
+          "stop" : 1576433964485,
+          "duration" : 9738
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "523c85c97fc878b4806b91e3f8eca090"
+    }, {
+      "name" : "AssertionError: \nExpected: <[ContactData{id=170, firstname='Firstname 0', middlename='Middlename 0', lastname='Lastname 0', homephone='Homephone 0', mobilephone='Mobilephone 0', workphone='', email='email 0', email2='null', email3='null'}, ContactData{id=169, firstname='modifyfirstname', middlename='modifymiddlename', lastname='lastname', homephone='homephone', mobilephone='mobilephone', workphone='', email='email', email2='null', email3='null'}, ContactData{id=171, firstname='Firstname 1', middlename='Middlename 1', lastname='Lastname 1', homephone='Homephone 1', mobilephone='Mobilephone 1', workphone='Workphone 1', email='email 1', email2='null', email3='null'}, ContactData{id=168, firstname='Firstname 0', middlename='Middlename 0', lastname='Lastname 0', homephone='Homephone 0', mobilephone='Mobilephone 0', workphone='', email='email 0', email2='null', email3='null'}]>\n     but: was <[ContactData{id=170, firstname='Firstname 0', middlename='Middlename 0', lastname='Lastname 0', homephone='Homephone 0', mobilephone='Mobilephone 0', workphone='', email='email 0', email2='null', email3='null'}, ContactData{id=171, firstname='Firstname 1', middlename='Middlename 1', lastname='Lastname 1', homephone='Homephone 1', mobilephone='Mobilephone 1', workphone='', email='email 1', email2='null', email3='null'}, ContactData{id=169, firstname='modifyfirstname', middlename='modifymiddlename', lastname='lastname', homephone='homephone', mobilephone='mobilephone', workphone='', email='email', email2='null', email3='null'}, ContactData{id=168, firstname='Firstname 0', middlename='Middlename 0', lastname='Lastname 0', homephone='Homephone 0', mobilephone='Mobilephone 0', workphone='', email='email 0', email2='null', email3='null'}]>",
+      "children" : [ {
+        "name" : "testCreateNewContact[ContactData{id=2147483647, firstname='Firstname 1', middlename='Middlename 1', lastname='Lastname 1', homephone='Homephone 1', mobilephone='Mobilephone 1', workphone='Workphone 1', email='email 1', email2='null', email3='null'}]",
+        "uid" : "9ea1ca9396b49694",
+        "parentUid" : "2c316a14ea2310aac60c387689772426",
+        "status" : "failed",
+        "time" : {
+          "start" : 1576433964487,
+          "stop" : 1576433973687,
+          "duration" : 9200
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "2c316a14ea2310aac60c387689772426"
+    }, {
+      "name" : "AssertionError: \nExpected: <[ContactData{id=170, firstname='modifyfirstname', middlename='modifymiddlename', lastname='lastname', homephone='homephone', mobilephone='mobilephone', workphone='workphone', email='email', email2='null', email3='null'}, ContactData{id=171, firstname='Firstname 1', middlename='Middlename 1', lastname='Lastname 1', homephone='Homephone 1', mobilephone='Mobilephone 1', workphone='', email='email 1', email2='null', email3='null'}, ContactData{id=169, firstname='modifyfirstname', middlename='modifymiddlename', lastname='lastname', homephone='homephone', mobilephone='mobilephone', workphone='', email='email', email2='null', email3='null'}, ContactData{id=168, firstname='Firstname 0', middlename='Middlename 0', lastname='Lastname 0', homephone='Homephone 0', mobilephone='Mobilephone 0', workphone='', email='email 0', email2='null', email3='null'}]>\n     but: was <[ContactData{id=170, firstname='modifyfirstname', middlename='modifymiddlename', lastname='lastname', homephone='homephone', mobilephone='mobilephone', workphone='', email='email', email2='null', email3='null'}, ContactData{id=171, firstname='Firstname 1', middlename='Middlename 1', lastname='Lastname 1', homephone='Homephone 1', mobilephone='Mobilephone 1', workphone='', email='email 1', email2='null', email3='null'}, ContactData{id=169, firstname='modifyfirstname', middlename='modifymiddlename', lastname='lastname', homephone='homephone', mobilephone='mobilephone', workphone='', email='email', email2='null', email3='null'}, ContactData{id=168, firstname='Firstname 0', middlename='Middlename 0', lastname='Lastname 0', homephone='Homephone 0', mobilephone='Mobilephone 0', workphone='', email='email 0', email2='null', email3='null'}]>",
+      "children" : [ {
+        "name" : "testContactModification",
+        "uid" : "905257cf661185d0",
+        "parentUid" : "a94e551da5dddd683ab9937a8f73f8d8",
+        "status" : "failed",
+        "time" : {
+          "start" : 1576433973706,
+          "stop" : 1576433987874,
+          "duration" : 14168
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a94e551da5dddd683ab9937a8f73f8d8"
+    }, {
+      "name" : "AssertionError: \nExpected: <3>\n     but: was <4>",
+      "children" : [ {
+        "name" : "testDeleteSelectedContact",
+        "uid" : "dc7e22bbf5831fe9",
+        "parentUid" : "060634b904543f7dcf135d426fdf2b31",
+        "status" : "failed",
+        "time" : {
+          "start" : 1576433987911,
+          "stop" : 1576433988374,
+          "duration" : 463
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "060634b904543f7dcf135d426fdf2b31"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

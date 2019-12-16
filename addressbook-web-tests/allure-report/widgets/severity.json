@@ -1,0 +1,61 @@
+[ {
+  "uid" : "ed185bb905399878",
+  "name" : "testRemoveContactFromGroup",
+  "time" : {
+    "start" : 1576433992110,
+    "stop" : 1576433997938,
+    "duration" : 5828
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8e7b0c5bd2638e8d",
+  "name" : "testAddContactInGroup",
+  "time" : {
+    "start" : 1576433988394,
+    "stop" : 1576433992069,
+    "duration" : 3675
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a323055b6910cad8",
+  "name" : "testCreateNewContact[ContactData{id=2147483647, firstname='Firstname 0', middlename='Middlename 0', lastname='Lastname 0', homephone='Homephone 0', mobilephone='Mobilephone 0', workphone='Workphone 0', email='email 0', email2='null', email3='null'}]",
+  "time" : {
+    "start" : 1576433954747,
+    "stop" : 1576433964485,
+    "duration" : 9738
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "dc7e22bbf5831fe9",
+  "name" : "testDeleteSelectedContact",
+  "time" : {
+    "start" : 1576433987911,
+    "stop" : 1576433988374,
+    "duration" : 463
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "9ea1ca9396b49694",
+  "name" : "testCreateNewContact[ContactData{id=2147483647, firstname='Firstname 1', middlename='Middlename 1', lastname='Lastname 1', homephone='Homephone 1', mobilephone='Mobilephone 1', workphone='Workphone 1', email='email 1', email2='null', email3='null'}]",
+  "time" : {
+    "start" : 1576433964487,
+    "stop" : 1576433973687,
+    "duration" : 9200
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "905257cf661185d0",
+  "name" : "testContactModification",
+  "time" : {
+    "start" : 1576433973706,
+    "stop" : 1576433987874,
+    "duration" : 14168
+  },
+  "status" : "failed",
+  "severity" : "normal"
+} ]

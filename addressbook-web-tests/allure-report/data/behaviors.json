@@ -1,0 +1,83 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "testCreateNewContact[ContactData{id=2147483647, firstname='Firstname 0', middlename='Middlename 0', lastname='Lastname 0', homephone='Homephone 0', mobilephone='Mobilephone 0', workphone='Workphone 0', email='email 0', email2='null', email3='null'}]",
+    "uid" : "a323055b6910cad8",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "failed",
+    "time" : {
+      "start" : 1576433954747,
+      "stop" : 1576433964485,
+      "duration" : 9738
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "testCreateNewContact[ContactData{id=2147483647, firstname='Firstname 1', middlename='Middlename 1', lastname='Lastname 1', homephone='Homephone 1', mobilephone='Mobilephone 1', workphone='Workphone 1', email='email 1', email2='null', email3='null'}]",
+    "uid" : "9ea1ca9396b49694",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "failed",
+    "time" : {
+      "start" : 1576433964487,
+      "stop" : 1576433973687,
+      "duration" : 9200
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "testContactModification",
+    "uid" : "905257cf661185d0",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "failed",
+    "time" : {
+      "start" : 1576433973706,
+      "stop" : 1576433987874,
+      "duration" : 14168
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "testDeleteSelectedContact",
+    "uid" : "dc7e22bbf5831fe9",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "failed",
+    "time" : {
+      "start" : 1576433987911,
+      "stop" : 1576433988374,
+      "duration" : 463
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "testAddContactInGroup",
+    "uid" : "8e7b0c5bd2638e8d",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1576433988394,
+      "stop" : 1576433992069,
+      "duration" : 3675
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "testRemoveContactFromGroup",
+    "uid" : "ed185bb905399878",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1576433992110,
+      "stop" : 1576433997938,
+      "duration" : 5828
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  } ]
+}
