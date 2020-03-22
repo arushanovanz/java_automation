@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.sandbox.YandexMarketTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-22T11:58:17" hostname="LAPTOP-1DCL0BJ6" time="100.373">
+<testsuite name="ru.stqa.pft.sandbox.YandexMarketTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-22T12:48:13" hostname="LAPTOP-1DCL0BJ6" time="13.188">
   <properties/>
-  <testcase name="addMobilePhoneToComparePageTest" classname="ru.stqa.pft.sandbox.YandexMarketTests" time="100.373"/>
+  <testcase name="addMobilePhoneToComparePageTest" classname="ru.stqa.pft.sandbox.YandexMarketTests" time="13.188"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[log4j:WARN No appenders could be found for logger (com.codeborne.selenide.impl.CiReportUrl).
 log4j:WARN Please initialize the log4j system properly.
 log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
-мар 22, 2020 2:58:17 PM java.util.prefs.WindowsPreferences <init>
+мар 22, 2020 3:48:13 PM java.util.prefs.WindowsPreferences <init>
 WARNING: Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5.
-Starting ChromeDriver 80.0.3987.106 (f68069574609230cf9b635cd784cfb1bf81bb53a-refs/branch-heads/3987@{#882}) on port 23049
+Starting ChromeDriver 80.0.3987.106 (f68069574609230cf9b635cd784cfb1bf81bb53a-refs/branch-heads/3987@{#882}) on port 21737
 Only local connections are allowed.
 Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-мар 22, 2020 2:58:21 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+мар 22, 2020 3:48:17 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-[1584878302.861][SEVERE]: Timed out receiving message from renderer: 0.100
-[1584878303.176][SEVERE]: Timed out receiving message from renderer: 0.100
-[1584878305.521][SEVERE]: Timed out receiving message from renderer: 0.100
-[1584878306.929][SEVERE]: Timed out receiving message from renderer: 0.100
-[1584878307.039][SEVERE]: Timed out receiving message from renderer: 0.100
-[1584878307.175][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584881298.101][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584881298.361][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584881302.538][SEVERE]: Timed out receiving message from renderer: 0.100
 ]]></system-err>
 </testsuite>

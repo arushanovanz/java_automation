@@ -41,8 +41,7 @@ public class YandexMarketTests {
     //  switchTo().window(mobileSearchWindow);
       SelenideElement secondMobilePhone = mobilePhones.last();
       mpp.addMobilePhoneToCompareList(secondMobilePhone);
-      Configuration.holdBrowserOpen= true;
-
+      $x("//a[@class= 'link header2-menu__item header2-menu__item_type_compare']").shouldBe(visible).click();
     }
 
 }
