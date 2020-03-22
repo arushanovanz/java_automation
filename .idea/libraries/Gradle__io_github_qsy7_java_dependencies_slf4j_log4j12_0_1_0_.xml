@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: io.github.qsy7.java.dependencies:slf4j-log4j12:0.1.0'">
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/jbr/bin/Could not find io.github.qsy7.java.dependencies:slf4j-log4j12:0.1.0'.&#13;&#10;Searched in the following locations:&#13;&#10;  - https:/repo.maven.apache.org/maven2/io/github/qsy7/java/dependencies/slf4j-log4j12/0.1.0'/slf4j-log4j12-0.1.0'.pom&#13;&#10;  - https:/repo.maven.apache.org/maven2/io/github/qsy7/java/dependencies/slf4j-log4j12/0.1.0'/slf4j-log4j12-0.1.0'.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

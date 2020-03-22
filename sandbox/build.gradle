@@ -11,6 +11,9 @@ test {
 }
 dependencies {
     implementation 'org.testng:testng:7.0.0'
-    implementation 'com.codeborne:selenide:5.5.1'
+    testCompile 'com.codeborne:selenide:5.10.0'
+    testCompile 'io.github.qsy7.java.dependencies:slf4j-log4j12:0.1.0'
 
+}
+tasks.withType(JavaCompile) {options.encoding = 'UTF-8'
 }
