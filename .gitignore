@@ -1,6 +1,7 @@
 .idea/
 .gradle
 build/
+allure-report/
 
 # Ignore Gradle GUI config
 gradle-app.setting
