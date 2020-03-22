@@ -7,6 +7,7 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
@@ -35,7 +36,9 @@ public class YandexMarketTests {
    // $(By.className("n-filter-sorter i-bem n-filter-sorter_js_inited n-filter-sorter_state_select")).waitUntil(visible, 30000).click();
      $(byText("по новизне")).click();
      // mobilePhones = $$x("//h3[@class='n-snippet-cell2__title']");
-      mobilePhones = $$x("//div[@class= 'n-product-toolbar__item link link_theme_minor hint n-user-lists_type_compare i-bem n-user-lists_type_compare_in-list_no n-user-lists_type_compare_js_inited']");
+      mobilePhones = $$x("//div[@class= 'n-product-toolbar__item " +
+                                        "link link_theme_minor hint n-user-lists_type_compare " +
+                                        "i-bem n-user-lists_type_compare_in-list_no n-user-lists_type_compare_js_inited']");
       SelenideElement firstMobilePhone =  mobilePhones.first();
       mpp.addMobilePhoneToCompareList(firstMobilePhone);
     //  switchTo().window(mobileSearchWindow);
